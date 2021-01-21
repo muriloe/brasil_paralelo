@@ -9,4 +9,5 @@ abstract class BPTheme {
   static const Color mecenas = Color(0xFFD9F489);
   static const Color patriota = Color(0xFFEF303B);
   static const Color modal = Color(0xFF272727);
+  static const Color input = Color(0xFF595959);
 }
