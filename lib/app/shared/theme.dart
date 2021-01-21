@@ -10,4 +10,5 @@ abstract class BPTheme {
   static const Color patriota = Color(0xFFEF303B);
   static const Color modal = Color(0xFF272727);
   static const Color input = Color(0xFF595959);
+  static const Color card = Color(0xFF3E3E3E);
 }
