@@ -85,5 +85,3 @@ https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/app-release.ap
   <img src="https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif" width="180" >
 </p>
 
-![](https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif)
-https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif
