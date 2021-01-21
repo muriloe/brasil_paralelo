@@ -39,6 +39,10 @@ Para rodar os testes:
 
 - flutter test
 
+env:
+Dart SDK version: 2.10.4 (stable) 
+Flutter (Channel stable, 1.22.5)
+
 ## Organização do projeto
 
 Organizei o projeto de forma a separar os estilos de navegação, temos a bottomtab, e na página home, temos as tabs para cada tipo de usuário. Elas estão organizadas cada um em seu respectivo modulos.
