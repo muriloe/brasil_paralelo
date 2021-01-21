@@ -20,7 +20,7 @@ Confira o protótipo que fiz:
 
 https://www.figma.com/file/DjpK8Qq5LZIHvK0zrs8BLv/Brasil-Paralelo?node-id=4%3A1155
 
-Como a plataforma tem conteúdo gratuito, não coloquei o login com necessário, ele é um caminho alternativo, portanto, existe a possibilidade do usuário conheçer os planos, sem pedir inputs chatos, melhorando assim o engajamento.
+Como a plataforma tem conteúdo gratuito, não coloquei o login como necessário, ele é um caminho alternativo, portanto, existe a possibilidade do usuário conheçer os planos, sem pedir inputs chatos, melhorando assim o engajamento.
 
 <p align="center">
   <img src="https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/detail_free.png?raw=true" width="250" >
