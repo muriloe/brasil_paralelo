@@ -1,7 +1,9 @@
 import 'package:brasil_paralelo/app/shared/models/content_model.dart';
 import 'package:brasil_paralelo/app/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'content_controller.dart';
 
 class ContentPage extends StatefulWidget {
@@ -18,6 +20,13 @@ class _ContentPageState extends ModularState<ContentPage, ContentController> {
   @override
   Widget build(BuildContext context) {
     final ContentModel content = ModalRoute.of(context).settings.arguments;
+    YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(content.link),
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
     return Scaffold(
       backgroundColor: BPTheme.main_gray,
       appBar: AppBar(
@@ -27,8 +36,51 @@ class _ContentPageState extends ModularState<ContentPage, ContentController> {
         title: Text(content.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          YoutubePlayerBuilder(
+              player: YoutubePlayer(
+                controller: _controller,
+              ),
+              builder: (context, player) {
+                return Column(
+                  children: [
+                    // some widgets
+                    player,
+                    //some other widgets
+                  ],
+                );
+              }),
+          buildSocialButtons(),
+        ],
       ),
+    );
+  }
+
+  Widget buildSocialButtons() {
+    return Row(
+      children: [
+        Padding(padding: EdgeInsets.fromLTRB(24, 50, 0, 0)),
+        GestureDetector(
+          onTap: () => {controller.like = !controller.like},
+          child: new Observer(builder: (_) {
+            return controller.like == true
+                ? IconTheme(data: new IconThemeData(color: Colors.white), child: new Icon(Icons.favorite))
+                : IconTheme(
+                    data: new IconThemeData(color: Colors.white),
+                    child: new Icon(Icons.favorite_border_outlined),
+                  );
+          }),
+        ),
+        Expanded(
+          child: Align(
+              alignment: Alignment.centerRight,
+              child: IconTheme(
+                data: new IconThemeData(color: Colors.white),
+                child: new Icon(Icons.cast_outlined),
+              )),
+        ),
+        Padding(padding: EdgeInsets.fromLTRB(0, 50, 24, 0)),
+      ],
     );
   }
 }

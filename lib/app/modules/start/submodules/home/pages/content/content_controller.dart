@@ -8,10 +8,5 @@ class ContentController = _ContentControllerBase with _$ContentController;
 
 abstract class _ContentControllerBase with Store {
   @observable
-  int value = 0;
-
-  @action
-  void increment() {
-    value++;
-  }
+  bool like = true;
 }
