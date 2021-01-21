@@ -7,7 +7,7 @@ part of 'main_controller.dart';
 // **************************************************************************
 
 final $MainController = BindInject(
-  (i) => MainController(),
+  (i) => MainController(i<AppService>()),
   singleton: true,
   lazy: true,
 );
@@ -19,39 +19,56 @@ final $MainController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$MainController on _MainControllerBase, Store {
-  final _$valueAtom = Atom(name: '_MainControllerBase.value');
+  final _$newsListAtom = Atom(name: '_MainControllerBase.newsList');
 
   @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
+  List<ContentModel> get newsList {
+    _$newsListAtom.reportRead();
+    return super.newsList;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
+  set newsList(List<ContentModel> value) {
+    _$newsListAtom.reportWrite(value, super.newsList, () {
+      super.newsList = value;
     });
   }
 
-  final _$_MainControllerBaseActionController =
-      ActionController(name: '_MainControllerBase');
+  final _$seriesListAtom = Atom(name: '_MainControllerBase.seriesList');
 
   @override
-  void increment() {
-    final _$actionInfo = _$_MainControllerBaseActionController.startAction(
-        name: '_MainControllerBase.increment');
-    try {
-      return super.increment();
-    } finally {
-      _$_MainControllerBaseActionController.endAction(_$actionInfo);
-    }
+  List<ContentModel> get seriesList {
+    _$seriesListAtom.reportRead();
+    return super.seriesList;
+  }
+
+  @override
+  set seriesList(List<ContentModel> value) {
+    _$seriesListAtom.reportWrite(value, super.seriesList, () {
+      super.seriesList = value;
+    });
+  }
+
+  final _$getHightLightsAsyncAction =
+      AsyncAction('_MainControllerBase.getHightLights');
+
+  @override
+  Future<void> getHightLights() {
+    return _$getHightLightsAsyncAction.run(() => super.getHightLights());
+  }
+
+  final _$getSeriesAsyncAction = AsyncAction('_MainControllerBase.getSeries');
+
+  @override
+  Future<void> getSeries() {
+    return _$getSeriesAsyncAction.run(() => super.getSeries());
   }
 
   @override
   String toString() {
     return '''
-value: ${value}
+newsList: ${newsList},
+seriesList: ${seriesList}
     ''';
   }
 }

@@ -1,6 +1,6 @@
 import 'package:brasil_paralelo/app/modules/start/start_module.dart';
-
-import 'app_controller.dart';
+import 'package:brasil_paralelo/app/shared/repository/app_repository.dart';
+import 'package:brasil_paralelo/app/shared/services/app_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:brasil_paralelo/app/app_widget.dart';
@@ -8,7 +8,8 @@ import 'package:brasil_paralelo/app/app_widget.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        $AppController,
+        Bind((i) => AppService(i.get<AppRepository>())),
+        Bind((i) => AppRepository()),
       ];
 
   @override

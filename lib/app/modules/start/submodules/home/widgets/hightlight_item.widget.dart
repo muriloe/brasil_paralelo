@@ -15,29 +15,32 @@ class HighLightItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.network(
-          imageUrl,
-          width: 300,
-          height: 120,
-          fit: BoxFit.cover,
-        ),
-        Container(
-          width: 50,
-          height: 50,
-          child: CustomPaint(
-            size: Size.infinite,
-            painter: BannerPainter(
-                message: getBannerText(contentStatus),
-                textStyle: TextStyle(color: Colors.black, letterSpacing: 1, fontWeight: FontWeight.w700),
-                textDirection: Directionality.of(context),
-                layoutDirection: Directionality.of(context),
-                location: BannerLocation.topStart,
-                color: getBannerColor(contentStatus)),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10.0),
+      child: Stack(
+        children: [
+          Image.network(
+            imageUrl,
+            width: MediaQuery.of(context).size.width,
+            height: 169,
+            fit: BoxFit.cover,
           ),
-        )
-      ],
+          Container(
+            width: 50,
+            height: 50,
+            child: CustomPaint(
+              size: Size.infinite,
+              painter: BannerPainter(
+                  message: getBannerText(contentStatus),
+                  textStyle: TextStyle(color: Colors.black, letterSpacing: 1, fontWeight: FontWeight.w700),
+                  textDirection: Directionality.of(context),
+                  layoutDirection: Directionality.of(context),
+                  location: BannerLocation.topStart,
+                  color: getBannerColor(contentStatus)),
+            ),
+          )
+        ],
+      ),
     );
   }
 
