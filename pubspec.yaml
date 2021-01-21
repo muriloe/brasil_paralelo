@@ -24,6 +24,7 @@ dependencies:
   flutter_modular: ^2.0.1
   fluttertoast: ^7.1.6
   youtube_player_flutter: ^7.0.0+7
+  modal_bottom_sheet: ^1.0.0+1
   carousel_slider: ^2.3.1
   flutter:
     sdk: flutter

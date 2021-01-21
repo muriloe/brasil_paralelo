@@ -1,3 +1,6 @@
+import 'pages/mecenas/mecenas_controller.dart';
+import 'pages/premium/premium_controller.dart';
+import 'pages/patriotas/patriotas_controller.dart';
 import 'package:brasil_paralelo/app/modules/start/submodules/home/pages/content/content_page.dart';
 
 import 'pages/content/content_controller.dart';
@@ -10,6 +13,9 @@ import 'home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        $MecenasController,
+        $PremiumController,
+        $PatriotasController,
         $ContentController,
         $MainController,
         $HomeController,

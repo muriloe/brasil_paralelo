@@ -8,4 +8,5 @@ abstract class BPTheme {
   static const Color btn_gold = Color(0xFFFBBC05);
   static const Color mecenas = Color(0xFFD9F489);
   static const Color patriota = Color(0xFFEF303B);
+  static const Color modal = Color(0xFF272727);
 }

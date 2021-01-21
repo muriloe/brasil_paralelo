@@ -1,4 +1,7 @@
 import 'package:brasil_paralelo/app/modules/start/submodules/home/pages/main/main_page.dart';
+import 'package:brasil_paralelo/app/modules/start/submodules/home/pages/mecenas/mecenas_page.dart';
+import 'package:brasil_paralelo/app/modules/start/submodules/home/pages/patriotas/patriotas_page.dart';
+import 'package:brasil_paralelo/app/modules/start/submodules/home/pages/premium/premium_page.dart';
 import 'package:brasil_paralelo/app/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -44,12 +47,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           ),
         ),
         body: TabBarView(
-          children: [
-            MainPage(),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
-            Icon(Icons.directions_bike),
-          ],
+          children: [MainPage(), PatriotasPage(), PremiumPage(), MecenasPage()],
         ),
       ),
     );
