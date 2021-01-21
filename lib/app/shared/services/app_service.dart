@@ -15,6 +15,10 @@ class AppService extends Disposable {
     return await _repository.getSeries();
   }
 
+  Future<Response> getPodcasts() async {
+    return await _repository.getPodcasts();
+  }
+
   @override
   void dispose() {}
 }

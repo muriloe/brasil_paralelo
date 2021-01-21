@@ -19,6 +19,13 @@ class AppRepository extends Disposable {
     return response;
   }
 
+  Future<Response> getPodcasts() async {
+    Dio dio = new Dio();
+    String url = 'https://run.mocky.io/v3/92ca7d7e-a2e9-4d73-b246-1def1ed42882';
+    Response response = await dio.get(url);
+    return response;
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose

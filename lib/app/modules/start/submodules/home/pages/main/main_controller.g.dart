@@ -49,6 +49,21 @@ mixin _$MainController on _MainControllerBase, Store {
     });
   }
 
+  final _$podCastListAtom = Atom(name: '_MainControllerBase.podCastList');
+
+  @override
+  List<ContentModel> get podCastList {
+    _$podCastListAtom.reportRead();
+    return super.podCastList;
+  }
+
+  @override
+  set podCastList(List<ContentModel> value) {
+    _$podCastListAtom.reportWrite(value, super.podCastList, () {
+      super.podCastList = value;
+    });
+  }
+
   final _$getHightLightsAsyncAction =
       AsyncAction('_MainControllerBase.getHightLights');
 
@@ -64,11 +79,20 @@ mixin _$MainController on _MainControllerBase, Store {
     return _$getSeriesAsyncAction.run(() => super.getSeries());
   }
 
+  final _$getPodcastsAsyncAction =
+      AsyncAction('_MainControllerBase.getPodcasts');
+
+  @override
+  Future<void> getPodcasts() {
+    return _$getPodcastsAsyncAction.run(() => super.getPodcasts());
+  }
+
   @override
   String toString() {
     return '''
 newsList: ${newsList},
-seriesList: ${seriesList}
+seriesList: ${seriesList},
+podCastList: ${podCastList}
     ''';
   }
 }

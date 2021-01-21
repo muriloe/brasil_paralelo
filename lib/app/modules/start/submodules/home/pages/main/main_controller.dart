@@ -20,6 +20,9 @@ abstract class _MainControllerBase with Store {
   @observable
   List<ContentModel> seriesList;
 
+  @observable
+  List<ContentModel> podCastList;
+
   @action
   Future<void> getHightLights() async {
     Response result = await _appService.getHightLights();
@@ -42,6 +45,20 @@ abstract class _MainControllerBase with Store {
       for (var i = 0; i < result.data.length; i++) {
         var temp = ContentModel.fromJson(result.data[i]);
         seriesList.add(temp);
+      }
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  @action
+  Future<void> getPodcasts() async {
+    Response result = await _appService.getPodcasts();
+    podCastList = List<ContentModel>();
+    try {
+      for (var i = 0; i < result.data.length; i++) {
+        var temp = ContentModel.fromJson(result.data[i]);
+        podCastList.add(temp);
       }
     } catch (err) {
       print(err);
