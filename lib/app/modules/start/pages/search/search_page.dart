@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'home_controller.dart';
+import 'search_controller.dart';
 
-class HomePage extends StatefulWidget {
+class SearchPage extends StatefulWidget {
   final String title;
-  const HomePage({Key key, this.title = "Home"}) : super(key: key);
+  const SearchPage({Key key, this.title = "Search"}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeController> {
+class _SearchPageState extends ModularState<SearchPage, SearchController> {
   //use 'controller' variable to access controller
 
   @override
