@@ -1,4 +1,4 @@
-# brasil_paralelo
+# Brasil Paralelo App
 
 Olá, para criar esse projeto utilizei como base o Modular + Mobx.
 
@@ -80,6 +80,10 @@ Se quiser você pode seguir esse modelo e adicionar mais coisas na API. É só g
 https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/app-release.apk
 
 ## Navegação completa
+
+<p align="center">
+  <img src="https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif" width="180" >
+</p>
 
 ![](https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif)
 https://github.com/muriloe/brasil_paralelo/blob/main/extracontent/BPRESUME.gif
