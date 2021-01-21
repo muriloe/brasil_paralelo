@@ -65,9 +65,17 @@ class _MainPageState extends ModularState<MainPage, MainController> {
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: BoxDecoration(color: Colors.transparent),
-                    child: HighLightItemWidget(
-                      contentStatus: controller.stringToContentEnum(i.contentType),
-                      imageUrl: i.imageUrl,
+                    child: GestureDetector(
+                      onTap: () => {
+                        Navigator.of(context).pushNamed(
+                          "/content",
+                          arguments: i,
+                        )
+                      },
+                      child: HighLightItemWidget(
+                        contentStatus: controller.stringToContentEnum(i.contentType),
+                        imageUrl: i.imageUrl,
+                      ),
                     ));
               },
             );
